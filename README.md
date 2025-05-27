@@ -6,27 +6,31 @@ in VDI sessions. Specifically this was developed to test the Kerbside
 client and this UEFI application running as the "boot loader" of a virtual
 machine hosted on the cloud under test.
 
-# Derivation
+## Derivation
 
 This code is to a large extent a derived work of Queso Fuego's UEFI programming
 YouTube playlist (https://www.youtube.com/playlist?list=PLT7NbkyNWaqZYHNLtOZ1MNxOt8myP5K0p)
 and specifically the associated git repository (https://github.com/queso-fuego/uefi-dev).
 
-# Licenses
+## Licenses
 
 The code this is based on is public domain licensed. I have therefore licensed
 this repository under the same license.
 
-# I just want the test target, not to compile stuff
+# Usage
+
+## I just want the test target, not to compile stuff
 
 A build version of this binary, packaged as a qcow2 file for convenience, is
 archived at https://images.shakenfist.com. For most use cases its simpler to
 just download that image than recompile everything.
 
-# No, I really do want to build the thing
+## No, I really do want to build the thing
 
-Firstly fetch the submodules:
+Firstly clone this repository and then fetch the submodules:
 
 ```
-git pull --recurse-submodules
+# git clone https://github.com/shakenfist/uefi-latency-guest
+# cd uefi-latency-guest
+# git pull --recurse-submodules
 ```
