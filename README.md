@@ -41,7 +41,7 @@ Firstly clone this repository and then fetch the submodules:
 Then install the required build dependencies:
 
 ```
-# sudo apt-get install build-essential clang
+# sudo apt-get install build-essential clang lld
 ```
 
 Build things:
