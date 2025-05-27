@@ -33,7 +33,7 @@ $(TARGET): $(SOURCE)
 	cp $(TARGET) $(DISK_IMG_FOLDER); \
 	cd $(DISK_IMG_FOLDER) && ./$(DISK_IMG_PGM) $(DISK_FLAGS); \
 	cd .. && cp $(DISK_IMG_FOLDER)/test.hdd uefi-latency-guest.raw; \
-	qemu-img convert uefi-latency-guest.raw uefi-latency-guest.qcow2
+	qemu-img convert -f raw -O qcow2 uefi-latency-guest.raw uefi-latency-guest.qcow2
 
 clean:
 	rm -rf $(TARGET)
