@@ -3,6 +3,8 @@
 
 SOURCE = efi.c
 TARGET = BOOTX64.EFI
+RAW_DISK = uefi-latency-guest.raw
+QCOW_DISK = uefi-latency-guest.qcow2
 
 CC = clang \
 	-target x86_64-unknown-windows \
@@ -32,8 +34,8 @@ $(TARGET): $(SOURCE)
 	$(CC) $(CFLAGS) -o $@ $<
 	cp $(TARGET) $(DISK_IMG_FOLDER); \
 	cd $(DISK_IMG_FOLDER) && ./$(DISK_IMG_PGM) $(DISK_FLAGS); \
-	cd .. && cp $(DISK_IMG_FOLDER)/test.hdd uefi-latency-guest.raw; \
-	qemu-img convert -f raw -O qcow2 uefi-latency-guest.raw uefi-latency-guest.qcow2
+	cd .. && cp $(DISK_IMG_FOLDER)/test.hdd $(RAW_DISK); \
+	qemu-img convert -f raw -O qcow2 $(RAW_DISK) $(QCOW_DISK)
 
 clean:
-	rm -rf $(TARGET)
+	rm -rf $(TARGET) $(RAW_DISK) $(QCOW_DISK)
