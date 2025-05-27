@@ -12,7 +12,7 @@ EFI_STATUS EFIAPI efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable
     uint8_t bgcolour = EFI_BLUE;
 
     while (TRUE) {
-        uint8_t fgcolour = bgcolour == EFI_BLACK ? EFI_WHITE : EFI_BLACK;
+        uint8_t fgcolour = (bgcolour == EFI_BLACK ? EFI_WHITE : EFI_BLACK);
 
         // Set colours
         SystemTable->ConOut->SetAttribute(SystemTable->ConOut,
@@ -28,6 +28,10 @@ EFI_STATUS EFIAPI efi_main(EFI_HANDLE ImageHandle, EFI_SYSTEM_TABLE *SystemTable
         EFI_INPUT_KEY key;
         while (SystemTable->ConIn->ReadKeyStroke(SystemTable->ConIn, &key) != EFI_SUCCESS)
             ;
+
+        bgcolour++;
+        if (bgcolour > EFI_LIGHTGRAY)
+            bgcolour = EFI_BLACK;
     }
 
     // Should never get here
