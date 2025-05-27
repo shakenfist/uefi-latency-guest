@@ -22,8 +22,9 @@ this repository under the same license.
 ## I just want the test target, not to compile stuff
 
 A build version of this binary, packaged as a qcow2 file for convenience, is
-archived at https://images.shakenfist.com. For most use cases its simpler to
-just download that image than recompile everything.
+archived at https://images.shakenfist.com/testimages/uefi-latency-guest.qcow2.
+For most use cases its simpler to just download that image than recompile
+everything.
 
 ## No, I really do want to build the thing
 
