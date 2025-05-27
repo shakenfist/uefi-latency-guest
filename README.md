@@ -27,10 +27,25 @@ just download that image than recompile everything.
 
 ## No, I really do want to build the thing
 
+I will provide instructions for Debian 12 here because that is the OS I was
+using as my daily driver when I worked on this. You will obviously need to
+tweak things for other OSes.
+
 Firstly clone this repository and then fetch the submodules:
 
 ```
-# git clone https://github.com/shakenfist/uefi-latency-guest
+# git clone --recurse-submodules https://github.com/shakenfist/uefi-latency-guest
 # cd uefi-latency-guest
-# git pull --recurse-submodules
+```
+
+Then install the required build dependencies:
+
+```
+# sudo apt-get install build-essential clang
+```
+
+Build things:
+
+```
+# make
 ```

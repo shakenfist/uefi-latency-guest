@@ -19,7 +19,7 @@ CFLAGS = \
 	-ffreestanding \
 	-nostdlib
 
-DISK_IMG_FOLDER = ../UEFI-GPT-image-creator
+DISK_IMG_FOLDER = UEFI-GPT-image-creator
 DISK_IMG_PGM    = write_gpt
 
 all: $(DISK_IMG_FOLDER)/$(DISK_IMG_PGM) $(TARGET)
